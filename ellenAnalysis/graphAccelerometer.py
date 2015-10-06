@@ -5,6 +5,10 @@ from matplotlib.lines import Line2D
 import csv
 import matplotlib.pyplot as plt
 
+import sys
+
+#csv file name passed as argument
+csvFile = sys.argv[1]
 
 variables = []
 
@@ -31,15 +35,18 @@ def add(list1, list2, list3):
 
 
 #Open csv file
-with open('2015-10-05_21-20-50.csv', 'rb') as csvfile:
+with open(str(csvFile), 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 
     for row in spamreader:
+
 		#if the row is after the first row
 		if i > 0:
 
+
 			loggingSample.append(float(row [loggingSampleind]))
 			time = (row[loggingTimeind]).split(':')
+			print time
 
 			#Convert minutes to seconds and add the seconds for 2 different time formats
 			if len(time) > 2:
@@ -49,6 +56,9 @@ with open('2015-10-05_21-20-50.csv', 'rb') as csvfile:
 
 			#Make arrays of loggingTime and the user motion
 			loggingTime.append(seconds)
+
+			print row [motionUserAccelerationXind]
+
 			accelerometerAccelerationX.append(float(row [motionUserAccelerationXind]))
 			accelerometerAccelerationY.append(float(row [motionUserAccelerationYind]))
 			accelerometerAccelerationZ.append(float(row [motionUserAccelerationZind]))
@@ -71,6 +81,7 @@ with open('2015-10-05_21-20-50.csv', 'rb') as csvfile:
 #Calculate magnitude of acceleration vector
 accelerationMagnitude = squareRoot(add(square(accelerometerAccelerationX),  square(accelerometerAccelerationY), square(accelerometerAccelerationZ)))
 
+print len(accelerationMagnitude)
 
 #Store data in data frame. I don't understand this stuff very well
 data = {'accelerationMagnitude' : pd.Series(accelerationMagnitude, index=loggingTime)}
