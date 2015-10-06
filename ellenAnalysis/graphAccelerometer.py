@@ -4,6 +4,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.lines import Line2D 
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 
 import sys
 
@@ -79,7 +80,12 @@ with open(str(csvFile), 'rb') as csvfile:
 
 
 #Calculate magnitude of acceleration vector
-accelerationMagnitude = squareRoot(add(square(accelerometerAccelerationX),  square(accelerometerAccelerationY), square(accelerometerAccelerationZ)))
+#accelerationMagnitude = squareRoot(add(square(accelerometerAccelerationX),  square(accelerometerAccelerationY), square(accelerometerAccelerationZ)))
+x = np.array(accelerometerAccelerationX)  
+y = np.array(accelerometerAccelerationY) 
+z = np.array(accelerometerAccelerationZ)
+
+accelerationMagnitude = np.sqrt(np.power(x, 2) + np.power(y, 2) + np.power(z, 2))
 
 print len(accelerationMagnitude)
 
