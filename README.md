@@ -7,9 +7,9 @@ accelerometers have been used for a variety of applications; we're interested in
 ###goals & research questions
 We can collect data from a variety of sources (dance teams on campus, experienced dancers vs. non-dancers) and see if we can find distinct patterns. First, however, we have some questions to investigate, like:
 - What is a dance? Can we identify dancing as a specific activity?
--Can we distinguish these dance styles from each other?
--How do we represent accelerometer data to other humans in a way that's useful and meaningful?
--How do you do this in real time? Dancing happens over time, so a single data point doesn't tell us much about the overall activity.
+- Can we distinguish these dance styles from each other?
+- How do we represent accelerometer data to other humans in a way that's useful and meaningful?
+- How do you do this in real time? Dancing happens over time, so a single data point doesn't tell us much about the overall activity.
         
 ###process
 We started our project by just collecting lots of different accelerometer data. this set us up for doing exploratory data analysis (EDA) to
