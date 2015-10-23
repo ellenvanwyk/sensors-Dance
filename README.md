@@ -18,4 +18,4 @@ We started our project by just collecting lots of different accelerometer data. 
         
 ###next steps
 
-![poster](https://github.com/ellenvanwyk/sensors-Dance/tree/webpage/assets/img/p1poster.png)
+![poster](https://github.com/ellenvanwyk/sensors-Dance/blob/webpage/webpage/assets/img/p1Poster.png?raw=true)
