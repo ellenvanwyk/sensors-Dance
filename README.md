@@ -78,7 +78,7 @@ We have a lot of work to do on this front. Our visualizations have primarily wor
 - _How do you do this in real time? Dancing happens over time, so a single data point doesn't tell us much about the overall activity._
 This is a great question, past-selves. We'll get back to you at the end of P2. (:
 
-**Moving forward**, we need to investigate that real-time work, but we could do a lot to retest the work we've done more rigorously. There's a lot of opportunity to collect data, and the representational work is still in its infancy. We also might want to start considering the ability to fool the sensors - and, realistically, thinking about this in terms of its applications. This concept is exciting, but also easily misapplied. We have to do a lot of consideration for how this would work in real-world situations.
+**Moving forward**, we need to investigate that real-time work, but we could do a lot to retest the work we've done more rigorously. There's a lot of opportunity to collect data, and the representational work is still in its infancy. We also might want to start considering the ability to fool the sensors - and, realistically, thinking about this in terms of its applications. This concept is exciting, but also easily misapplied. We have to do a lot of consideration for how this would work in real-world situations. That being said... We could also do a lot to even start cleaning up our code and files, but that's less exciting, so we probably won't get around to it just yet.
 
 _thanks for reading! we've also included a poster below_
 
