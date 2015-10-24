@@ -17,7 +17,7 @@ We started our project by just collecting lots of different accelerometer data. 
 
 We primarily used an app called [SensorLog](https://itunes.apple.com/us/app/sensorlog/id388014573?mt=8) to collect data. We faced a couple of hiccups with this, since SensorLog seems to have some errors in data collection that we can't really explain. We managed to get access to a home-grown accelerometer app, but faced the issue of our data having different formats to work in.
 
-![two graphs on top of each other; the top graph has staggered clusters of lines increasing from bottom left to top right; the graph on the bottom is a smooth y=x curve](/img/low-pass-filter.png)
+![two graphs on top of each other; the top graph has staggered clusters of lines increasing from bottom left to top right; the graph on the bottom is a smooth y=x curve](/img/sensorlog-error.png)
 
 **Figure**: example of oddities in SensorLog data. The x-axis is the sample, and the y-axis is the associated time. We would expect a smooth line (as in the gyroTimeStamp) but sometimes see the strange steps for logging time. This is the same data source!
 
