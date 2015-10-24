@@ -28,24 +28,24 @@ Overall, however, our project started to look promising fairly early. After some
 As our data cleaning became more sophisticated, we also began to collect more intentional data. In order to deal with the problem of **classification**, we collected data for _line dances_ (the wobble and the cupid shuffle(, _structured dance_ (zumba and salsa), and _motion data_ (walking and running). This data was usable for our work with **visualization**.
 
 ### results
-Some of our key findings were:
+Some of our key findings were (see poster at end for analysis details):
 
-###### the low pass filter
-we were able to get a mess of data like this:
+###### time and frequency domain
+We used a low pass filter to help visualize the accelerometer data, shown below.  The time domain graph shows us which pocket the accelerometer is in.
 
 ![jagged lines on a graph](/img/amplitude.png)
 
-to look more like this:
+We then explored the data in the frequency domain, below.
 
 ![smooth curves on a graph](/img/low-pass-filter.png)
 
-We can see that an activity like walking provides much more of a regular cycle than a dance like salsa. This graph is also providing some interesting information, like which pocket the accelerometer is in, since we can see global maxima when the foot associated with the accelerometer pocket hits the ground. This data also leads us to...
+We can see that an activity like walking provides much more of a regular cycle than a dance like salsa. These data also lead us to...
 
 ###### principle component analysis
 
 ![a graph featuring clusters of walking data sets in the top left, and clusters of various dances in the bottom right](/img/pca-cluster.png)
 
-These images show distinct clusters between walking activity and dancing data. This is particular data set doesn't distinguish dances from each other, however, and we need to collect a larger number of sample sizes to make this meaningful - right now, our n is about 3... Which may or may not be related to the fact that we have three team members.
+These images show distinct clusters between walking activity and dancing data. This is particular data set doesn't distinguish dances from each other, however, and we need to collect a larger number of samples and refine our feature extraction to make this meaningful.
 
 ##### 3d visualization
 
