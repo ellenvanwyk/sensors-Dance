@@ -76,4 +76,4 @@ This is a great question, past-selves. We'll get back to you at the end of P2. (
 
 _thanks for reading! we've also attached a poster below_
 
-[![poster representation of dance dance project](/img/p1Poster.png)](/img/p1Poster-full.png)
+[![poster representation of dance dance project](/img/p1Poster-smaller.png)](/img/p1Poster.png)
