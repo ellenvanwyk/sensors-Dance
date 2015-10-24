@@ -43,33 +43,22 @@ secondsEnd = 32;
 %Get data
 for i = 1:length(data)
     
+    %Run lowpass filter and bucket data
     [a,b,c] = runLowPassFilter...
         (data{i}, lpf, bucketInt, secondsStart,secondsEnd);
     
     avgAmpRaw = [avgAmpRaw mean(b)];
     lpfAccMagBucket =[lpfAccMagBucket c];
 
-    
     bucketTimestamp = (1: length(lpfAccMagBucket))'/30;
-    
-
-    
+ 
+    %Create frequency domain
     [d, e] = periodogram((c - mean(c)), hamming(length(c)), [], 1/bucketInt);
     freqPower = [freqPower, d];
     frequencies = [frequencies, e];
 
-%{
-    if i == 13
-        figure
-        line(e,d)
-        hold off
-        figure     
-        plot(bucketTimestamp, c)
-        hold off
-    end
- %}   
-    %Find the number of peaks in the spectogram (arbitrarily defined as > .05)
-    %Find the frequency and amplitude of the top 3 peaks
+ 
+    %Find the number of peaks in the spectogram (arbitrarily defined as > .003)
     [peaks, locs] = findpeaks(d);
     
     isPeakAboveT = peaks>.003;
@@ -78,15 +67,12 @@ for i = 1:length(data)
     numPeaks = [numPeaks sum(isPeakAboveT)];
     
     %Separate out common frequencies and find their average and variation
-    
     peaksAboveTLoc = locs .* isPeakAboveT;
     peaksAboveTAmp = peaks .* isPeakAboveT;
     
     %Strip out zeros
     peaksAboveTLoc(all(peaksAboveTLoc==0,2),:)=[];
     peaksAboveTAmp(all(peaksAboveTAmp==0,2),:)=[];
-    
-    
     
     FreqPeaksAboveT = [];
     
@@ -105,8 +91,6 @@ for i = 1:length(data)
     
 end
 
-%legend(labels)
-
 
 
 %Make PCA Vector
@@ -116,6 +100,7 @@ profileTitles = {'numPeaks','avgFreq','variationFreq','variationAmp','avgAmp','a
 
 [coeff, score, latent] = pca(danceProfiles);
 
+%Plot PCA coefficients
 figure
 scatter(coeff(1:6,1),coeff(1:6,2),100,[1,0.4,0.6]);
 hold all
@@ -130,24 +115,11 @@ legend('walking', 'structured dancing', 'unstructured dancing', 'salsa')
 xlabel('First Component');
 ylabel('Second Component');
 
-
-help 
 hold off
 
-for i = 1:5
-    figure
-    scatter( danceProfiles(i, 1:6), danceProfiles(i+1, 1:6),100,[1,0.4,0.6]);
-    hold on 
-    scatter( danceProfiles(i, 7:16), danceProfiles(i+1, 7:16),100,[0,1,1]);
-    
-    xlabel(profileTitles{i});
-    ylabel(profileTitles{i+1});
-    
+%Print whether difference in walking and dancing is significant for all
+%variables
+for i = 1:length(profileTitles)
     profileTitles{i}
     [h,p] = ttest2(danceProfiles(i, 1:6), danceProfiles(i, 7:16))
-    
-    hold off
 end
-
-profileTitles{i+1}
-[h,p] = ttest2(danceProfiles(i+1, 1:6), danceProfiles(i+1, 7:16))
