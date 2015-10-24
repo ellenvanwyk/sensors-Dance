@@ -1,3 +1,5 @@
+%External library
+
 function [ bucketedData ] = bucketData( bucketInterval, timestamps, values)
 
     numBuckets = ceil(max(timestamps) / bucketInterval);
