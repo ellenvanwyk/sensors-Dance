@@ -56,24 +56,30 @@ Accelerometer data can be displayed in three dimensional space to provide a comp
 ###### node server
 
 ![a dense paragraph of alphanumeric characters littered with ampersands, equal signs, and other symbols](/img/raw-server.png)
+
 raw data from SensorLog
 
 ![json objects with data descriptions as keys, and associated sensor samples as values](/img/server-json.png)
+
 The node server allows us to pipe SensorLog data over a local network; this sets us up for future work in real time visualization of sensor data. In particular, this cleans the data up in a easily readable JSON format - this could be stored in a database, or accessed for immediate processing and visualization.
 
 ### next steps
 Overall, some of our basic questions seem to be answered:
 
 - _What is a dance? Can we identify dancing as a specific activity?_
+
 Yes! Dance is a specific type of motion, and accelerometer data can be used to differentiate from other common behaviors that occur alongside dance - like walking.
 
 - _Can we distinguish these dance styles from each other?_
+
 For the moment, no. Dance could probably be described as "rhythmically frenetic." So, while we can distinguish dancing from walking, there's simply too much noise to make a meaningful differentiation between the different types of dance with our current data set.
 
 - _How do we represent accelerometer data to other humans in a way that's useful and meaningful?_
+
 We have a lot of work to do on this front. Our visualizations have primarily worked as a proof of concept, and our current visualization seems intimately tied to the realistic motion, but this doesn't necessarily feel like it adheres to a meaningful principle of information visualization - we'd have to consider something like pre-attentive processing to see whether it actually means something to people.
 
 - _How do you do this in real time? Dancing happens over time, so a single data point doesn't tell us much about the overall activity._
+
 This is a great question, past-selves. We'll get back to you at the end of P2. (:
 
 **Moving forward**, we need to investigate that real-time work, but we could do a lot to retest the work we've done more rigorously. There's a lot of opportunity to collect data, and the representational work is still in its infancy. We also might want to start considering the ability to fool the sensors - and, realistically, thinking about this in terms of its applications. This concept is exciting, but also easily misapplied. We have to do a lot of consideration for how this would work in real-world situations.
