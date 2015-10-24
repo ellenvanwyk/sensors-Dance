@@ -1,5 +1,5 @@
 # dance dance
-## Ellen Van Wyk, Vincent van den Goor, Ricky Holtz
+###### Ellen Van Wyk, Vincent van den Goor, Ricky Holtz
         
 ### the project
 accelerometers have been used for a variety of applications; we're interested in seeing what they can tell us about dancers
