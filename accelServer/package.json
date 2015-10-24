@@ -1,0 +1,15 @@
+{
+  "name": "accelserver",
+  "version": "0.0.1",
+  "description": "a node server that listens for sensorlog accelerometer data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "through2-map": "*"
+  },
+  "author": "ricky holtz",
+  "license": "ISC"
+}
