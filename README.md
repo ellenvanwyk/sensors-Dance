@@ -30,7 +30,7 @@ As our data cleaning became more sophisticated, we also began to collect more in
 ### results
 Some of our key findings were:
 
-#### the low pass filter
+###### the low pass filter
 we were able to get a mess of data like this:
 
 ![jagged lines on a graph](/img/amplitude.png)
@@ -41,17 +41,20 @@ to look more like this:
 
 We can see that an activity like walking provides much more of a regular cycle than a dance like salsa. This graph is also providing some interesting information, like which pocket the accelerometer is in, since we can see global maxima when the foot associated with the accelerometer pocket hits the ground. This data also leads us to...
 
-#### principle component analysis
+###### principle component analysis
+
 ![a graph featuring clusters of walking data sets in the top left, and clusters of various dances in the bottom right](/img/pca-cluster.png)
 
 These images show distinct clusters between walking activity and dancing data. This is particular data set doesn't distinguish dances from each other, however, and we need to collect a larger number of sample sizes to make this meaningful - right now, our n is about 3... Which may or may not be related to the fact that we have three team members.
 
 #### 3d visualization
+
 ![accelerometer data of a person walking in 3D space](/img/3d-viz.gif)
 
 Accelerometer data can be displayed in three dimensional space to provide a computational representation of where the accelerometer is in space. So, we have some sense of what a dance physically looks like, which is a step in the direction of visualizing this information in a human-consumable manner. The visualization above is a sped-up version of a person (note how we can see the person's altitude change as they walk uphill.)
 
-**node server**
+###### node server
+
 ![a dense paragraph of alphanumeric characters littered with ampersands, equal signs, and other symbols](/img/raw-server.png)
 raw data from SensorLog
 
