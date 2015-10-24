@@ -31,7 +31,7 @@ As our data cleaning became more sophisticated, we also began to collect more in
 Some of our key findings were (see poster at end for analysis details):
 
 ###### time and frequency domain
-We used a low pass filter to help visualize the accelerometer data, shown below.  The time domain graph shows us which pocket the accelerometer is in.
+We used a low pass filter to help visualize and analyze the accelerometer data, shown below.  The time domain graph shows us which pocket the accelerometer is in.
 
 ![jagged lines on a graph](/img/amplitude.png)
 
@@ -45,7 +45,7 @@ We can see that an activity like walking provides much more of a regular cycle t
 
 ![a graph featuring clusters of walking data sets in the top left, and clusters of various dances in the bottom right](/img/pca-cluster.png)
 
-These images show distinct clusters between walking activity and dancing data. This is particular data set doesn't distinguish dances from each other, however, and we need to collect a larger number of samples and refine our feature extraction to make this meaningful.
+This graph shows distinct clusters between walking activity and dancing data. This is particular data set doesn't distinguish dances from each other, however, and we need to collect a larger number of samples and refine our feature extraction to make this meaningful.
 
 ##### 3d visualization
 
